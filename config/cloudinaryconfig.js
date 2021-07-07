@@ -7,10 +7,4 @@ const coloudinaryConfig = config({
   api_secret: process.env.API_SECRET,l̥
 })
 
-// const storage = new CloudinaryStorage({
-//     cloudinary,
-//     folder: 'CSIimages',
-//     allowedFormats: 'jpg, jpeg, png,'
-// })
-
 module.exports = { coloudinaryConfig, uploader }
