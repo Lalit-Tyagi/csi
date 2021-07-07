@@ -1,0 +1,208 @@
+<% layout('layouts/boilerplate') -%>
+
+    <main id="product">
+        <% if(result.length>0){%>
+            <div class="collections">Our Collection</div>
+            <div class="container">
+                <div class="row">
+                    <!-- <nav class="col-md-12 col-lg-3" id="sidebar">
+                                <div class="p-4 pt-5">
+                                    <h5>Categories</h5>
+                                    <ul class="list-unstyled components mb-5">
+                                        <li>
+                                            <a href="collection/all" data-toggle="collapse" aria-expanded="false"
+                                                class="dropdown-toggle">View All</a>
+
+                                            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Jeans</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        T-shirt</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Jacket</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Shoes</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Sweater</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="collection/apparel" data-toggle="collapse" aria-expanded="false"
+                                                class="dropdown-toggle">Apparel</a>
+                                            <ul class="collapse list-unstyled" id="pageSubmenu1">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Casual</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Football</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Jordan</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Lifestyle</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Running</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Soccer</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Sports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="collection/accessories" data-toggle="collapse"
+                                                aria-expanded="false" class="dropdown-toggle">Accessories</a>
+                                            <ul class="collapse list-unstyled" id="pageSubmenu2">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Casual</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Football</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Jordan</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Lifestyle</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Running</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Soccer</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Sports</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="collection/jewellery" data-toggle="collapse" aria-expanded="false"
+                                                class="dropdown-toggle">Jwellery</a>
+                                            <ul class="collapse list-unstyled" id="pageSubmenu3">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Nicklace</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Ring</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Bag</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Sacks</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Lipstick</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="collection/handbag" data-toggle="collapse" aria-expanded="false"
+                                                class="dropdown-toggle">Handbag</a>
+                                            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Jeans</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        T-shirt</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Jacket</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Shoes</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Sweater</a></li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="collection/home" data-toggle="collapse" aria-expanded="false"
+                                                class="dropdown-toggle">Home</a>
+                                            <ul class="collapse list-unstyled" id="pageSubmenu4">
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Jeans</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        T-shirt</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Jacket</a></li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span> Shoes</a>
+                                                </li>
+                                                <li><a href="#"><span class="fa fa-chevron-right mr-2"></span>
+                                                        Sweater</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav> -->
+                    <div class="container-fluid col-md-12 col-lg-9">
+                        <!-- <div class="row"> -->
+                        <div id="1" class="row page">
+                            <% for(let j=0;j<30&&j<result.length;j++){ %>
+                                <% let product=result[j]; %>
+                                    <div class="col-6 col-xl-4">
+                                        <div class="card product-card shadow">
+                                            <div class="card-img-block zoom">
+                                                <a href="/collection/<%=product.category%>/<%=product.style_no%>">
+                                                    <img class="card-img-top" src="<%=product.img_path%>"
+                                                        alt="Card image cap">
+                                                    <div class="middle">
+                                                        overlay
+                                                    </div>
+                                                </a>
+                                            </div>
+                                            <div class="card-body">
+                                                <p class="heart"><i class="fas fa-heart"></i>
+                                                    <%= product.popularity %>
+                                                </p>
+                                                <h5 class="card-title">
+                                                    <%= product.name %>
+                                                </h5>
+                                                <p class="card-text"><b>Style No : </b>
+                                                    <%= product.style_no %>
+                                                </p>
+                                                <a class="btn btn-detail btn-block"
+                                                    href="/collection/<%=product.category%>/<%=product.style_no%>">View
+                                                    Details</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                        </div>
+                        <% let k=2;for(let i=30;i<result.length;i+=30){ %>
+                            <div id="<%= k%>" class="row page d-none">
+                                <% for(let j=i;j<i+30&&j<result.length;j++){ %>
+                                    <% let product=result[j]; %>
+                                        <div class="col-6 col-xl-4">
+                                            <div class="card product-card shadow">
+                                                <div class="card-img-block zoom">
+                                                    <a href="/collection/<%=product.category%>/<%=product.style_no%>"><img
+                                                            class="card-img-top" src="<%=product.img_path%>"
+                                                            alt="Card image cap"></a>
+                                                </div>
+                                                <div class="card-body">
+                                                    <p class="heart"><i class="fas fa-heart"></i>
+                                                        <%= product.popularity %>
+                                                    </p>
+                                                    <h5 class="card-title">
+                                                        <%= product.name %>
+                                                    </h5>
+                                                    <p class="card-text"><b>Style No : </b>
+                                                        <%= product.style_no %>
+                                                    </p>
+                                                    <a class="btn btn-detail btn-block"
+                                                        href="/collection/<%=product.category%>/<%=product.style_no%>">View
+                                                        Details</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <% } %>
+                            </div>
+                            <% k++;} %>
+
+                                <!-- </div> -->
+                    </div>
+                </div>
+                <div class="mx-auto w-75">
+                    <ul class="pagination ">
+                        <li class="mx-auto prev"></li>
+                        <!-- <li class="pageNumber active mx-auto"><a href="#">1</a></li> -->
+                        <li class="pageNumber active" value="1">1</li>
+                        <% let j=2; %>
+                            <% for(let i=result.length-30;i>=0;i-=30){%>
+                                <li class="pageNumber" value="<%= j%>">
+                                    <%=j %>
+                                </li>
+                                <% j++;}%>
+                                    <li class="mx-auto next"></li>
+                    </ul>
+                </div>
+            </div>
+            <% }else{%>
+                <div class="d-flex justify-content-center" style="padding:5%">
+                    <img class="img-fluid" src="/public/img/commingsoon.png" alt="">
+                </div>
+                <% } %>
+    </main>

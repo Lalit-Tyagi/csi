@@ -1,0 +1,43 @@
+<% layout('layouts/admin') -%>
+
+
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <h1 class="display-4">Welcome Administrator!</h1>
+            </div>
+        </div>
+        <div class="container">
+            <div class="table-responsive w-75 mx-auto">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Name</th>
+                            <th scope="col">Login Id</th>
+                            <th scope="col">Del</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% for(let i=0;i<result.length;i++){ %>
+                            <% let row=result[i]; %>
+                                <tr>
+                                    <td>
+                                        <%=row.name %>
+                                    </td>
+                                    <td>
+                                        <%=row.login_id %>
+                                    </td>
+                                    <td class=" d-flex justify-content-center">
+                                        <button type="button" class="manager-del-btn btn btn-outline-danger"
+                                            value="<%= row.id %>">
+                                            <i class="fas fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <% } %>
+                    </tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>

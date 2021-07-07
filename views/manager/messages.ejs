@@ -1,0 +1,47 @@
+<% layout('layouts/manager') -%>
+<main>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container text-center">
+            <h1 class="display-4">Messages</h1>
+            <p class="lead">Here you can manage the concepts Source Inc.</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="table-responsive w-75 mx-auto">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Read</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Message</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for(let i=0;i<result.length;i++){ %>
+                    <% let row = result[i]; %>
+                    <% if(!row.read){ %>
+                    <tr>
+                        <td class="d-flex justify-content-center"> <input type="checkbox" class="customcheckbox"
+                                value="<%= row.id %>"></td>
+                        <% }else{ %>
+                    <tr class="bg-read">
+                        <td class="d-flex justify-content-center"> <input type="checkbox" class="customcheckbox"
+                                value="<%= row.id %>" checked></td>
+                        <% } %>
+                        <td><%=row.name %></td>
+                        <td><%=row.email %> </td>
+                        <td><%=row.message %> </td>
+                        <td class=" d-flex justify-content-center">
+                            <button type="button" class=" del-btn btn btn-outline-danger" value="<%= row.id %>">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</main>

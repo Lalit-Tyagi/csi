@@ -1,0 +1,98 @@
+<% layout('layouts/manager') -%>
+
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <h1 class="display-4">Edit Product</h1>
+                <p class="lead">Here you can manage the concepts Source Inc.</p>
+            </div>
+        </div>
+        <div class="container">
+            <form action="/manage/product/<%= result[0].style_no %>/edit" method="post">
+
+                <div class="row  col-md-12 offset-xl-2 col-xl-8">
+                    <div class="col-md-6 form-group my-2">
+                        <label for="name">Name</label>
+                        <input type="text" name="pName" class="form-control" id="name" placeholder="Cashmera shawl"
+                            value="<%= result[0].name %> " required>
+                    </div>
+                    <div class="col-md-6 form-group my-2">
+                        <label for="styleno">Style No.</label>
+                        <input type="text" name="pStyleNo" class="form-control" id="styleno" placeholder="DSC 123"
+                            value="<%= result[0].style_no %>" required disabled>
+                    </div>
+                    <div class="col-md-6 input-group my-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text bg-info text-white" for="category">Category</label>
+                        </div>
+                        <select name="pCategory" class="custom-select" id="category" required>
+
+
+                            <option>None</option>
+                            <option value=" apparel" <%=(result[0].category=='apparel' )?"selected":" "  %> >Apparel</option>
+                            <option value=" accessories" <%=(result[0].category=='accessories' )?"selected":" "  %> >Accessories</option>
+                            <option value=" handbag" <%=(result[0].category=='handbag' )?"selected":" "  %>>Handbag</option>
+                            <option value=" home" <%=(result[0].category=='home' )?"selected":" "  %>>Home</option>
+                            <option value=" jewellery" <%=(result[0].category=='jewellery' )?"selected":" "  %>>Jewellery</option>
+                        </select>
+                    </div>
+                    <div class=" col-md-6 input-group my-2">
+                                <div class="input-group-prepend">
+                                    <label class="input-group-text bg-info text-white"
+                                        for="subcategory">Sub-Category</label>
+                                </div>
+                                <select name="pSubCategory" class="custom-select" id="subcategory" required>
+                                    <option>None</option>
+                                    <option value="cat1" <%=(result[0].sub_category=='cat1' )?"selected":" "  %> >cat1</option>
+                                    <option value=" cat2" <%=(result[0].sub_category=='cat2' )?"selected":" "  %>>cat2</option>
+                                    <option value=" cat3" <%=(result[0].sub_category=='cat3' )?"selected":" "  %>>cat3</option>
+                                    <option value=" cat4" <%=(result[0].sub_category=='cat4' )?"selected":" "  %>>cat4</option>
+                                    <option value=" cat5" <%=(result[0].sub_category=='cat5' )?"selected":" "  %>>cat5</option>
+                                </select>
+                    </div>
+                    <div class=" col-12 form-group my-2">
+                                        <label for="description">Description</label>
+                                        <textarea name="pDescription" class="form-control" id="description" rows="4"
+                                            required><%= result[0].description %></textarea>
+                    </div>
+                    <hr class=" col-12 border-dark">
+                    <div class="row my-4">
+                        <div class="col-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img id="main-image-0" class="img-fluid "
+                                    src="<%= result[0].main_img_path %>" alt="" srcset="">
+                            </div>
+                        </div>
+                        <% if(result[0]){%>
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid" id="image-0" src="<%= result[0].img_path %>"
+                                    alt="" srcset="">
+                            </div>
+                        </div>
+                        <%}%>
+                        <% if(result[1]){%>
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid " id="image-1" src="<%= result[1].img_path %>"
+                                    alt="" srcset="">
+                            </div>
+                        </div>
+                        <%}%>
+                        <% if(result[2]){%>
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid " id="image-2" src="<%= result[2].img_path %>"
+                                    alt="" srcset="">
+                            </div>
+                        </div>
+                        <%}%>
+                    </div>
+                    <div class="col-12 p-4">
+                        <a type="button" href="/manage/product" class="col-5 float-left btn btn-danger">Cancel</a>
+                        <button type="submit" class="col-5 offset-2 float-right btn btn-success">Update</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>

@@ -1,0 +1,119 @@
+<% layout('layouts/manager') -%>
+
+    <main>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container text-center">
+                <h1 class="display-4">Add Product</h1>
+                <p class="lead">Here you can manage the concepts Source Inc.</p>
+            </div>
+        </div>
+
+
+        <div class="container">
+            <div class="flashes">
+                <% if (flashMessages) { %>
+                    <% if(flashMessages.error){%>
+                        <div class="alert alert-danger text-center" role="alert">
+                            <strong>
+                                <%=flashMessages.error%>
+                            </strong>
+                        </div>
+                        <%}%>
+                            <% if(flashMessages.success){%>
+                                <div class="alert alert-success text-center" role="alert">
+                                    <strong>
+                                        <%=flashMessages.success%>
+                                    </strong>
+                                </div>
+                                <%}%>
+                                    <% } %>
+            </div>
+            <form action="new" method="post" enctype="multipart/form-data">
+
+                <div class="row  col-md-12 offset-xl-2 col-xl-8">
+                    <div class="col-md-6 form-group my-2">
+                        <label for="name">Name</label>
+                        <input type="text" name="pName" class="form-control" id="name" placeholder="Cashmera shawl"
+                            required>
+                    </div>
+                    <div class="col-md-6 form-group my-2">
+                        <label for="styleno">Style No.</label>
+                        <input type="text" name="pStyleNo" class="form-control" id="styleno" placeholder="DSC 123"
+                            required>
+                    </div>
+                    <div class="col-md-6 input-group my-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text bg-info text-white" for="category">Category</label>
+                        </div>
+                        <select name="pCategory" class="custom-select" id="category" required>
+                            <option selected>None</option>
+                            <option value="apparel">Apparel</option>
+                            <option value="accessories">Accessories</option>
+                            <option value="handbag">Handbag</option>
+                            <option value="home">Home</option>
+                            <option value="jewellery">Jewellery</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 input-group my-2">
+                        <div class="input-group-prepend">
+                            <label class="input-group-text bg-info text-white" for="subcategory">Sub-Category</label>
+                        </div>
+                        <select name="pSubCategory" class="custom-select" id="subcategory" required>
+                            <option selected>None</option>
+                            <option value="cat1">cat1</option>
+                            <option value="cat2">cat2</option>
+                            <option value="cat3">cat3</option>
+                            <option value="cat4">cat4</option>
+                            <option value="cat5">cat5</option>
+                        </select>
+                    </div>
+                    <div class="col-12 form-group my-2">
+                        <label for="description">Description</label>
+                        <textarea name="pDescription" class="form-control" id="description" rows="4"
+                            required></textarea>
+                    </div>
+                    <hr class=" col-12 border-dark">
+                    <div class="col-sm-6">
+                        <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                            <img id="main-image-0" class="img-fluid " src="/public/img/dummy.jpg" alt="" srcset="">
+                        </div>
+                    </div>
+                    <div class="col-sm-6 d-flex align-items-center justify-content-center">
+                        <button type="button" class="btn btn-outline-secondary m-1 w-100"
+                            onclick="$('#main-image-upload').click()">Browse</button>
+                        <button type="button" class="btn btn-outline-danger m-1 w-100" id="main-image-btn"
+                            onclick="$('#main-image-0').attr('src','/public/img/dummy.jpg')">Delete</button>
+                        <input type="file" class="d-none" name="mainImage" id="main-image-upload">
+                    </div>
+                    <div class=" row my-4">
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid" id="image-0" src="/public/img/dummy.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid " id="image-1" src="/public/img/dummy.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="col-4 col-sm-3">
+                            <div class="border border-dark rounded-lg p-2 d-flex align-items-center">
+                                <img class="img-fluid " id="image-2" src="/public/img/dummy.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                        <div class="col-sm-3 d-flex align-items-center justify-content-center">
+                            <button type="button" class="btn btn-outline-secondary m-1 w-100"
+                                onclick="$('#images-upload').click()" id="images-btn">Browse</button>
+                            <button type="button" class="btn btn-outline-danger m-1 w-100"
+                                onclick="$('#image-2').attr('src','/public/img/dummy.jpg');$('#image-1').attr('src','/public/img/dummy.jpg');$('#image-0').attr('src','/public/img/dummy.jpg')">Delete</button>
+                            <input type="file" class="d-none" name="images" id="images-upload" multiple>
+                        </div>
+                    </div>
+                    <div class="col-12 p-4">
+                        <button type="button" class="col-5 float-left btn btn-danger">Reset</button>
+                        <input type="submit" class="col-5 offset-2 float-right btn btn-success">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
