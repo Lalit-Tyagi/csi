@@ -1,5 +1,5 @@
 const express = require("express")
-require('dotenv').config();
+require("dotenv").config()
 const app = express()
 const path = require("path")
 const ejsMate = require("ejs-mate")
@@ -38,7 +38,11 @@ app.set("views", path.join(__dirname, "views"))
 
 app.use("/public", express.static("public"))
 
-app.use("", homeRoutes)
+app.get("/web/health", (req, res) => {
+  res.send("ok")
+})
+
+app.use("/", homeRoutes)
 
 app.use("/manage", managerRoutes)
 
@@ -49,7 +53,5 @@ app.get("*", (req, res) => {
 })
 
 app.listen(process.env.SERVER_PORT, () => {
-  console.log(
-    `Server started at localhost::${process.env.SERVER_PORT}`
-  )
+  console.log(`Server started at localhost::${process.env.SERVER_PORT}`)
 })
