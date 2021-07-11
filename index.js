@@ -52,6 +52,6 @@ app.get("*", (req, res) => {
   res.sendFile(__dirname + "/public/error.html")
 })
 
-app.listen(process.env.SERVER_PORT, () => {
-  console.log(`Server started at localhost::${process.env.SERVER_PORT}`)
+app.listen(process.env.SERVER_PORT||8080, () => {
+  console.log(`Server started at localhost::${process.env.SERVER_PORT||8080}`)
 })
