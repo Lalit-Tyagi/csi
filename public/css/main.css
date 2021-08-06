@@ -107,8 +107,8 @@ body {
   overflow: hidden;
   height: 75px;
   width: 75px;
-  border: 1px solid transparent;
-  border-radius: 100px;
+  border: 0px solid transparent;
+  border-radius: 50%;
   /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background: conic-gradient(
     #fd004c,
@@ -121,24 +121,24 @@ body {
   );
   background-position: 50% 50%;
   background-size: 400% 400%;
-  animation: spin 1.5s  infinite linear;
+  animation: spin 4s infinite linear;
 }
 
 @keyframes spin {
   100% {
-    transform: rotate(-360deg);
+    transform: rotate(360deg);
   }
 }
 @keyframes spin-opp {
   100% {
-    transform: rotate(360deg);
+    transform: rotate(-360deg);
   }
 }
-.logo-border>img{
+.logo-border > img {
   border-radius: 50%;
   width: 100%;
   height: 100%;
-  animation: spin-opp 1.5s  infinite linear;
+  animation: spin-opp 4s infinite linear;
 }
 
 .navbar-toggler {
