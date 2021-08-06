@@ -103,27 +103,42 @@ body {
 }
 
 .logo-border {
-  padding: 2px;
+  padding: 3px;
   overflow: hidden;
   height: 75px;
   width: 75px;
-  border: 0px solid transparent;
+  border: 1px solid transparent;
   border-radius: 100px;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+  background: conic-gradient(
+    #fd004c,
+    #fe9000,
+    #fff020,
+    #3edf4b,
+    #3363ff,
+    #b102b7,
+    #fd004c
+  );
+  background-position: 50% 50%;
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: spin 1.5s  infinite linear;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+@keyframes spin {
   100% {
-    background-position: 0% 50%;
+    transform: rotate(-360deg);
   }
+}
+@keyframes spin-opp {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.logo-border>img{
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  animation: spin-opp 1.5s  infinite linear;
 }
 
 .navbar-toggler {
@@ -787,7 +802,7 @@ div.mainframe {
 }
 
 .middle {
-  transition: .5s ease;
+  transition: 0.5s ease;
   opacity: 0;
   position: absolute;
   top: 50%;
@@ -851,7 +866,6 @@ div.subframe.active {
   border-top: 1px solid #222;
 }
 
-
 .pdesc > a.contact-icon {
   text-decoration: none;
 }
@@ -859,21 +873,20 @@ div.subframe.active {
 .pdesc > a.contact-icon:hover {
   text-decoration: none;
 }
-.instagram{
+.instagram {
   font-size: 2rem;
   color: #bc2a8d;
 }
-.skype{
+.skype {
   font-size: 2rem;
-  color: #0078d7 ;
+  color: #0078d7;
 }
-.whatsapp{
+.whatsapp {
   font-size: 2rem;
-  color: #25D366;
+  color: #25d366;
 }
 
 .pdesc button {
-
   outline: none;
   padding: 10px 30x;
   border: 2px solid #000;
