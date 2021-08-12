@@ -109,7 +109,6 @@ body {
   width: 75px;
   border: 0px solid transparent;
   border-radius: 50%;
-  /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
   background: conic-gradient(
     #fd004c,
     #fe9000,

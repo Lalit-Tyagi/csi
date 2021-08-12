@@ -1,4 +1,4 @@
-const { config, uploader } = require('cloudinary').v2;
+const { config, uploader } = require("cloudinary").v2
 // const { CloudinaryStorage } = require('multer-storage-cloudinary')
 
 const coloudinaryConfig = config({

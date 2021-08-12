@@ -118,8 +118,8 @@ router.post(
     uri = covertBufferToImageUri(main.mimetype, main.buffer)
     await uploader.upload(uri, (err, result) => {
       if (err) {
-        console.log(error)
-        res.flash("error", "something went wrong while uploding images")
+        console.log(err)
+        req.flash("error", "something went wrong while uploding images")
         return res.redirect("manage/product/new")
       }
       let insertProduct
@@ -139,10 +139,10 @@ router.post(
     for (let i = 0; i < req.files.images.length && i < 3; i++) {
       image = req.files.images[i]
       uri = covertBufferToImageUri(image.mimetype, image.buffer)
-      await uploader.upload(uri, (error, result) => {
-        if (error) {
-          console.log(error)
-          res.flash("error", "something went wrong while uploding images")
+      await uploader.upload(uri, (err, result) => {
+        if (err) {
+          console.log(err)
+          req.flash("error", "something went wrong while uploding images")
           return res.redirect("/manage/product/new")
         }
 
